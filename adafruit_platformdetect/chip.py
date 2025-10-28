@@ -304,6 +304,10 @@ class Chip:
         if self.detector.check_dt_compatible_value("sun50i-h5"):
             return chips.H5
 
+        opi_zero2w_is_detected = self.detector.check_dt_compatible_value("orangepi-zero2w")
+        if opi_zero2w_is_detected:
+            return chips.H618
+
         if self.detector.check_dt_compatible_value("sun50i-h618"):
             return chips.H618
 

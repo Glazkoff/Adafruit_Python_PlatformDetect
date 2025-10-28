@@ -24,6 +24,8 @@ Implementation Notes
 import adafruit_platformdetect
 
 detector = adafruit_platformdetect.Detector()
+is_compat = detector.check_dt_compatible_value('orangepi-zero2w')
+print(f'is_compat={is_compat}')
 
 print("Board Detection Test")
 print()
@@ -89,6 +91,7 @@ if detector.board.any_pynq_board:
 
 if detector.board.any_orange_pi:
     print("Orange Pi detected.")
+    print("Is this a Pi Zero 2W?", detector.board.RASPBERRY_PI_ZERO_2W)
 
 if detector.board.any_lemaker:
     print("LeMaker board detected.")

@@ -26,6 +26,7 @@ import adafruit_platformdetect
 detector = adafruit_platformdetect.Detector()
 is_compat = detector.check_dt_compatible_value('orangepi-zero2w')
 print(f'is_compat={is_compat}')
+print(f'detector.board.any_embedded_linux={detector.board.any_embedded_linux}')
 
 print("Board Detection Test")
 print()

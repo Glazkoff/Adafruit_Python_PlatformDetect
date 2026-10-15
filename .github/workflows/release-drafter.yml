@@ -18,7 +18,7 @@ jobs:
         # write permission is required to create a github release
         contents: write
         pull-requests: read
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.CI_RUNNERS || '{}')['ubuntu-latest'] || 'ubuntu-latest' }}
     steps:
       - uses: release-drafter/release-drafter@v5
         env:

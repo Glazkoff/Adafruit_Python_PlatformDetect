@@ -10,7 +10,7 @@ on:
 
 jobs:
   upload-pypi:
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON(vars.CI_RUNNERS || '{}')['ubuntu-latest'] || 'ubuntu-latest' }}
     steps:
     - uses: actions/checkout@v3
     - name: Check For pyproject.toml

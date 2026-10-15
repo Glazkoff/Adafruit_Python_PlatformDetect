@@ -8,7 +8,7 @@ on: [pull_request, push]
 
 jobs:
   test:
-    runs-on: ${{ fromJSON(vars.CI_RUNNERS || '{}')['ubuntu-latest'] || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest
     steps:
     - name: Translate Repo Name For Build Tools filename_prefix
       id: repo-name
